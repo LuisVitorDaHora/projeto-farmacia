@@ -33,11 +33,10 @@ Projeto Semestral/ ├── app.py ├── db_config.py ├── requirement
    `python app.py`
 
 👥 Equipe
-Luis Vitor Da Hora (Desenvolvedor)
-Luis Henrique (Desenvolvedor)
-Gustavo Euzébio (Desenvolvedor)
-Gabriel Costa (Desenvolvedor)
-
+- Luis Vitor Da Hora (Desenvolvedor)
+- Luis Henrique (Desenvolvedor)
+- Gustavo Euzébio (Desenvolvedor)
+- Gabriel Costa (Desenvolvedor)
 
 📄 Licença
 Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
