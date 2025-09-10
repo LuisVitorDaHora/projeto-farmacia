@@ -9,7 +9,6 @@
 ## 📦 Estrutura do Projeto
 Projeto Semestral/ ├── app.py ├── db_config.py ├── requirements.txt ├── README.md ├── controllers/ ├── models/ ├── views/ └── venv/
 
-
 ---
 
 ## 🛠️ Como instalar e rodar o projeto
@@ -19,17 +18,17 @@ Projeto Semestral/ ├── app.py ├── db_config.py ├── requirement
    git clone https://github.com/LuisVitorDaHora/projeto-farmacia.git
    cd projeto-farmacia
 
-1. Crie o ambiente virtual:
+2. Crie o ambiente virtual:
    `python -m venv venv`
 
-2. Ative o ambiente:
+3. Ative o ambiente:
    - Windows: `venv\Scripts\activate`
    - Linux/macOS: `source venv/bin/activate`
 
-3. Instale as dependências:
+4. Instale as dependências:
    `pip install -r requirements.txt`
 
-4. Execute:
+5. Execute:
    `python app.py`
 
 👥 Equipe
@@ -39,4 +38,5 @@ Projeto Semestral/ ├── app.py ├── db_config.py ├── requirement
 - Gabriel Costa (Desenvolvedor)
 
 📄 Licença
-Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
+- Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
+  
