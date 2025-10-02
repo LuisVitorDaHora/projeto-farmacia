@@ -6,10 +6,10 @@ from mysql.connector import Error
 def criar_conexao():
     try:
         conexao = mysql.connector.connect(
-            host='',         # ou IP do servidor MySQL
-            user='',       # substitua pelo seu usuário do MySQL
-            password='',     # substitua pela sua senha
-            database=''     # substitua pelo nome do seu banco
+            host='localhost',         # ou IP do servidor MySQL
+            user='root',       # substitua pelo seu usuário do MySQL
+            password='3501',     # substitua pela sua senha
+            database='farmacia'     # substitua pelo nome do seu banco
         )
         # Verifica se a conexão foi bem-sucedida
         if conexao.is_connected():
