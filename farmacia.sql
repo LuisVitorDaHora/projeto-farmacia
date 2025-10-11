@@ -14,19 +14,19 @@ CREATE TABLE tbl_produtos (
 CREATE TABLE tbl_funcionarios (
     id_funcionarios INT AUTO_INCREMENT PRIMARY KEY,
     nome_funcionarios VARCHAR(100) NOT NULL,
-    cpf_funcionarios VARCHAR(14) NOT NULL,
+    cpf_funcionarios VARCHAR(14) NOT NULL UNIQUE,
     cargo_funcionarios VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE tbl_entrada_estoque (
     id_entrada INT AUTO_INCREMENT PRIMARY KEY,
-    data_entrada DATE NOT NULL,
+    data_entrada DATETIME NOT NULL,
     quantidade_entrada INT
 );
 
 CREATE TABLE tbl_saida_estoque (
 	id_saida INT AUTO_INCREMENT PRIMARY KEY,
-    data_saida DATE NOT NULL,
+    data_saida DATETIME NOT NULL,
     quantidade_saida INT
 );
 
@@ -85,17 +85,17 @@ CREATE TABLE prod_said (
 ALTER TABLE func_forn ADD CONSTRAINT FK_func_forn_1
     FOREIGN KEY (fk_tbl_funcionarios_id_funcionarios)
     REFERENCES tbl_funcionarios (id_funcionarios)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE func_forn ADD CONSTRAINT FK_func_forn_2
     FOREIGN KEY (fk_tbl_fornecedor_id_fornecedor)
     REFERENCES tbl_fornecedor (id_fornecedor)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE func_pro ADD CONSTRAINT FK_func_pro_1
     FOREIGN KEY (fk_tbl_funcionarios_id_funcionarios)
     REFERENCES tbl_funcionarios (id_funcionarios)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE func_pro ADD CONSTRAINT FK_func_pro_2
     FOREIGN KEY (fk_tbl_produtos_id_produtos)
@@ -105,17 +105,17 @@ ALTER TABLE func_pro ADD CONSTRAINT FK_func_pro_2
 ALTER TABLE esto_said ADD CONSTRAINT FK_esto_said_1
     FOREIGN KEY (fk_tbl_estoque_id_estoque)
     REFERENCES tbl_estoque (id_estoque)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE esto_said ADD CONSTRAINT FK_esto_said_2
     FOREIGN KEY (fk_tbl_saida_estoque_id_saida)
     REFERENCES tbl_saida_estoque (id_saida)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE esto_entr ADD CONSTRAINT FK_esto_entr_1
     FOREIGN KEY (fk_tbl_entrada_estoque_id_entrada)
     REFERENCES tbl_entrada_estoque (id_entrada)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE esto_entr ADD CONSTRAINT FK_esto_entr_2
     FOREIGN KEY (fk_tbl_estoque_id_estoque)
@@ -125,27 +125,27 @@ ALTER TABLE esto_entr ADD CONSTRAINT FK_esto_entr_2
 ALTER TABLE prod_entr ADD CONSTRAINT FK_prod_entr_1
     FOREIGN KEY (fk_tbl_produtos_id_produtos)
     REFERENCES tbl_produtos (id_produtos)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE prod_entr ADD CONSTRAINT FK_prod_entr_2
     FOREIGN KEY (fk_tbl_entrada_estoque_id_entrada)
     REFERENCES tbl_entrada_estoque (id_entrada)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE forn_prod ADD CONSTRAINT FK_forn_prod_1
     FOREIGN KEY (fk_tbl_fornecedor_id_fornecedor)
     REFERENCES tbl_fornecedor (id_fornecedor)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE forn_prod ADD CONSTRAINT FK_forn_prod_2
     FOREIGN KEY (fk_tbl_produtos_id_produtos)
     REFERENCES tbl_produtos (id_produtos)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE prod_esto ADD CONSTRAINT FK_prod_esto_1
     FOREIGN KEY (fk_tbl_produtos_id_produtos)
     REFERENCES tbl_produtos (id_produtos)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
  
 ALTER TABLE prod_esto ADD CONSTRAINT FK_prod_esto_2
     FOREIGN KEY (fk_tbl_estoque_id_estoque)
