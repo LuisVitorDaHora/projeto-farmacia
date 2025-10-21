@@ -77,9 +77,9 @@ def excluir_produto():
 #Funções para o sistema de funcionários
 #Cadastro de funcionarios
 def cadastrar_funcionarios():
-   nome_func = input('Coloque o nome do funcionario: ')
-   cpf_func = input('Coloque o cpf do funcionario: ')
-   cargo_func = input ('Coloque o cargo do funcionario: ')
+   nome_func = input('Digite o nome do funcionario: ')
+   cpf_func = input('Digite o cpf do funcionario: ')
+   cargo_func = input ('Digite o cargo do funcionario: ')
 
    conexao = criar_conexao()
    cursor = conexao.cursor()
@@ -259,7 +259,7 @@ def atualizar_estoque():
     if cursor.rowcount == 0:
         print(" ID não encontrado.")
     else:
-        print(" Quantidades atualizadas com sucesso.")
+        print(" Lote atulizado com sucesso.")
     cursor.close()
     conexao.close()
 
@@ -513,7 +513,7 @@ def menu_entrada_saida_estoque():
         elif opcao == '4':
             listar_saidas_estoque()
         elif opcao == '0':
-            print("Voltando ao menu principal...")
+            print("Encerrando o menu de entrada/saída de estoque...")
             break
         else:
             print('Opção invalidade, escolha a opção entre 1 a 4 ou 0 para sair')

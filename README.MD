@@ -11,4 +11,5 @@
    `pip install -r requirements.txt`
 
 4. Execute:
+   `python db_config.py`
    `python app.py`
